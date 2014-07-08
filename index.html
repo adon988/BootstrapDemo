@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+  <meta charset='utf8'>
+  <!--Bootstrap不支持IE的兼容模式。為了讓IE瀏覽器運行最新的瀏覽模式，建議將此<meta>標籤加入到你的頁面中-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--引用CDN加速的文件-->
+  <!-- 最新 Bootstrap 核心 CSS 文件 
+  <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- 可选的Bootstrap主题文件（一般不用引入） 
+  <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">-->
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 
+  <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--HTML Encoder
+  <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+  <script src="js/run_prettify.js"></script>
+
+  <!-- Internet Explorer 8需要Respond.js配合才能實現對媒體查詢（media query）的支持。 --> 
+  <!- -[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+  <![endif]--> 
+
+  <!--讓IE瀏覽器運行最新的渲染模式-->
+  <style>
+    /*Internet Explorer 10並沒有區分螢幕的寬度和視口（viewport）的寬度，導致Bootstrap無法有效判別寬度。為了解決這個問題，可以引入下面列出的這段CSS暫時修復此問題：始 Windows Phone 8設備按照桌面瀏覽器的方式呈現頁面*/
+    @-ms-viewport       { width: device-width; }
+    /*套用上述較窄的“手機”呈現方式*/
+    @-webkit-viewport   { width: device-width; }
+    @-moz-viewport      { width: device-width; }
+    @-ms-viewport       { width: device-width; }
+    @-o-viewport        { width: device-width; }
+    @viewport           { width: device-width; }
+  </style>
+  <script>
+    if (navigator.userAgent.match( /IEMobile\/10\.0/ )) {
+       var msViewportStyle = document.createElement( "style" )
+      msViewportStyle.appendChild(
+        document.createTextNode(
+          "@-ms-viewport{width:auto!important}"
+        )
+      )
+      document.getElementsByTagName( "head" )[ 0 ].appendChild(msViewportStyle)
+    }
+  </script>
+
+  <!--为了增强跨浏览器表现的一致性，我们使用了Normalize-->
+  <link rel="stylesheet" href="css/normalize.min.css">
+
+  </head>
+  <body class="container">
+    
+    <h1>Bootstrap</h1>
+    <p>
+      <a href="http://v3.bootcss.com/" target="_blank">http://v3.bootcss.com/</a>
+    </p>
+    <p>
+      範例頁面:<br>
+      [<a href="bootstrap.zip">下載壓縮檔(bootstrap.zip)</a>]
+    </p>
+    <div class="container">
+      <h2>標示程式碼</h2>
+        使用<code>&lt;pre&gt;</code>標籤可以用來作為程式說明區塊:<br>
+        <small>建議內容包含&lt;p&gt;標籤
+        <pre> <p>Pre - Sample text here...</p> </pre>
+        使用<code>code</code>標示標籤:<br>
+        For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+
+      <h2>內容至中 container</h2>
+      <div class="container">
+        <code>container</code>包裹頁面上的內容即可實現居中對齊。在不同的媒體查詢閾值範圍內都為container設置了width，用以匹配柵格系統。
+        注意，由於設置了padding和固定寬度，.container不能嵌套。
+      </div>
+    </div>
+
+    <h1>圖片</h1>
+    <div class="container">
+      <h2>響應式圖片 img-responsive</h2>
+      <p>
+        <code>img-responsive</code>賦予圖片max-width: 100%;和height: auto;
+      </p>
+      <img src="http://tw.mjjq.com/pic/20061028/20061028013344588.jpg" class="img-responsive" alt="Resonsive image"/>
+
+    
+    
+      <h2>圖片形狀</h2>
+      <p>
+        <code>img-rounded</code>:圓角方形<br>
+        <code>img-circle</code>:圓形<br>
+        <code>img-thumbnail</code>:邊框方形<br>
+        !注意。IE8不支援圓形<br>
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTSEvH0JkPdRJcrli-WySysQXqrDIurDkJZ7hEm4b_Q1VZIFoglA" class="img-rounded img-responsive" alt="Resonsive image"/>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTSEvH0JkPdRJcrli-WySysQXqrDIurDkJZ7hEm4b_Q1VZIFoglA" class="img-circle img-responsive" alt="Resonsive image"/>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTSEvH0JkPdRJcrli-WySysQXqrDIurDkJZ7hEm4b_Q1VZIFoglA" class="img-thumbnail img-responsive" alt="Resonsive image"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h1>柵格<small>柵格系統</small></h1>
+    <div class="container">
+      <h2>柵格排列</h2>
+      響應式柵格排列，呈現方式類似表格。<br>
+      /* Small devices (mobile phone, 768px bellow) */ <br>
+      @ media (max-width: @screen-xs-max) { ... }<br><br>
+      /* Small devices (tablets, 768px and up) */ <br>
+      @ media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }<br><br>
+      /* Medium devices (desktops, 992px and up) */ <br>
+      @ media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }<br><br>
+      /* Large devices (large desktops, 1200px and up) */ <br>
+      @ media (min-width: @screen-lg-min) { .. . }<br><br>
+      <h3>範例</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-1"><code>col-xs-*</code></div>
+          <div class="col-xs-2">(*代表合併欄位數，有點類似colspan)</div>
+          <div class="col-xs-2">超小屏幕設備 手機(<768px)</div>
+          <div class="col-xs-3">總是水平排列</div>
+          <div class="col-xs-1">最大.container宽度 None (自动)</div>
+          <div class="col-xs-1">最大列宽 auto</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1"><code>col-sm-*</code></div>
+          <div class="col-sm-2">(*代表合併欄位數，有點類似colspan)</div>
+          <div class="col-sm-2">小屏幕设备 平板 (≥768px)</div>
+          <div class="col-sm-3">開始是堆疊在一起的，超過這些閾值將變為水平排列</div>
+          <div class="col-sm-2">最大.container宽度 750px</div>
+          <div class="col-sm-2">最大列宽 60px</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"><code>col-md-*</code></div>
+          <div class="col-md-2">(*代表合併欄位數，有點類似colspan)</div>
+          <div class="col-md-2">中等屏幕設備 桌面(≥992px)</div>
+          <div class="col-md-3">開始是堆疊在一起的，超過這些閾值將變為水平排列</div>
+          <div class="col-md-2">最大.container宽度 970px</div>
+          <div class="col-md-2">最大列宽 78px</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1"><code>col-lg-*</code></div>
+          <div class="col-lg-2">(*代表合併欄位數，有點類似colspan)</div>
+          <div class="col-lg-2">大屏幕設備 桌面(≥1200px)</div>
+          <div class="col-lg-3">開始是堆疊在一起的，超過這些閾值將變為水平排列</div>
+          <div class="col-lg-2">最大.container宽度 1170px</div>
+          <div class="col-lg-2">最大列宽 95px</div>
+        </div>
+      </div>
+
+      <h2>柵格排列-混合使用</h2>
+      <p>
+        可以將<code>col-xs-*</code>,<code>col-sm-*</code>,<code>col-md-*</code>,<code>col-lg</code>-*共同放在一個容器中，混合搭配。
+      </p>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2 col-sm-2 col-md-1 col-lg-2">A</div>
+          <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2">Adddd dddddddddd ddddddddd ddddddd dddddd dddddd</div>
+          <div class="col-xs-2 col-sm-1 col-md-2 col-lg-2">A</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-1">B</div>
+          <div class="col-sm-1 col-md-2 col-lg-2">B</div>
+          <div class="col-sm-2 col-md-1 col-lg-2">B</div>
+        </div>
+      </div>
+
+      <h2>柵格排列-控制顯示/隱藏</h2>
+      <p>
+        <code>visible</code>-來控制不同解析時的顯示<br>
+        visible-xs, visible-sm, visible-md, visible-lg<br>
+        <code>hidden</code>-來控制隱藏
+        hidden-xs, hidden-sm, hidden-md, hidden-lg<br>
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="visible-xs">xs</div>
+          <div class="visible-sm">sm</div>
+          <div class="visible-md">md</div>
+          <div class="visible-lg">lg</div>
+        </div>
+      </div>
+   
+      <h2>柵格排列-偏移</h2>
+      <p>
+        <code>col-...-offset-*</code> 來控制偏移<br>
+        col-xs-offset-*, col-sm-offset-*, col-md-offset-*, col-lg-offset-*
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1">A</div>
+          <div class="col-lg-1 col-xs-offset-2">A</div>
+          <div class="col-lg-1">A</div>
+        </div>
+      </div>
+
+      <h2>柵格排列-推拉功能</h2>
+      <p>
+        <code>.col-..-push-*</code> 和 <code>.col-..-pull-* </code>來改變位置，你可以想像成推箱子<br>
+        col-xs-push-*, col-sm-push-*, col-md-push-*, col-lg-push-*<br>
+        col-xs-pull-*, col-sm-pull-*, col-md-pull-*, col-lg-pull-*<br>
+
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1 col-xs-push-5"> <b>1</b> </div>
+          <div class="col-lg-1">0</div>
+          <div class="col-lg-1">0</div>
+          <div class="col-lg-1">0</div>
+          <div class="col-lg-1">0</div>
+          <div class="col-lg-1 col-xs-pull-5"> <b>5</b> </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>排版</h1>
+    <div class="container">
+
+      <h2>標題及副標題</h2>
+      <p >
+        HTML < h1>~< h6>標題對應的字體大小如下，<code>&lt;small&gt;</code>標籤則可作為副標題
+      </p>
+      <div class="container">
+          <div class="row">
+            <div class="col-xs-3"><h1>H1標籤<small>副標題</small></h1></div>
+            <div class="col-xs-3">36px</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><h2>H2標籤<small>副標題</small></h2></div>
+            <div class="col-xs-3">30px</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><h3>H3標籤<small>副標題</small></h3></div>
+            <div class="col-xs-3">24px</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><h4>H4標籤<small>副標題</small></h4></div>
+            <div class="col-xs-3">18px</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><h5>H5標籤<small>副標題</small></h5></div>
+            <div class="col-xs-3">14px</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><h6>H6標籤<small>副標題</small></h6></div>
+            <div class="col-xs-3">12px</div>
+          </div>
+      </div>
+
+      <h2>文字顏色效果</h2>
+      <p>
+        藉由class可以設定顏色，並且做出類似超連結Hover切換顏色的效果<br>
+        <code>text-muted</code>,
+        <code>text-primary</code>,
+        <code>text-success</code>,
+        <code>text-info</code>,
+        <code>text-warning</code>,
+        <code>text-danger</code> 
+      </p>
+      <div class="contatiner">
+        <div class="text-muted">text-muted</div>
+        <div class="text-primary">text-primary</div>
+        <div class="text-success">text-success</div>
+        <div class="text-info">text-info</div>
+        <div class="text-warning">text-warning</div>
+        <div class="text-danger">text-danger</div>
+      </div>
+
+      <h2>註解</h2>
+      <p>
+        <code>&lt;abbr&gt;</code>標籤可以做出註解文字效果，再Hover時，會出現?符號，以及註解文字。<br>
+        試看看-><abbr  title = "abbr 註解文字效果" class="" > abbr </abbr>
+      </p>
+
+      <h2>字母大寫</h2>
+      <p>
+        <code>initialism</code>屬性，可以讓英文字母變成大寫<br>
+        -> <p class="initialism">this is For Test...</p>
+        通常都會與註解一起使用->
+        <abbr title="HyperText Markup Language"  class="initialism"> html </abbr>
+      </p>
+
+      <h2>標示引用來源</h2>
+      <p>
+        <code>blackquote</code> 及 p標籤來標示引用來源，引用註解可以用small標籤，<br>
+        <code>pull-right</code>可以將內容靠右
+      </p>
+      
+      <blockquote > 
+        <p> 引用來源: Boostrap官方網站 </p> 
+        <small> 2014年 </small> 
+      </blockquote>
+
+      <blockquote class = "pull-right"> 
+        <p> 引用來源: Boostrap官方網站(靠右) </p> 
+        <small> 2014年 </small> 
+      </blockquote>
+
+      <h2>列表樣式</h2>
+      ㄧ般使用&lt;ul&gt; &lt;li&gt;，都會將列表標示清除，或者是用列表調成水平元件，<br>
+      <code>list-unstyled</code>:清除列表項目符號 <br>
+      <code>list-inline</code>:將列表調成水平 <br>
+      <div class="container">
+        <ul class="list-unstyled">
+          <li>首頁</li>
+          <li>關於我們</li>
+          <li>產品</li>
+        </ul>
+        <ul class="list-inline">
+          <li>首頁</li>
+          <li>關於我們</li>
+          <li>產品</li>
+        </ul>
+      </div>
+    </div>
+
+    <h1>表格</h1>
+    
+    <div class="container">
+      <h2>table基本設定及樣式</h2>
+      <p>
+        Class說明:<br>
+        <code>table</code> 為表格樣式類別，預設只會有水平線。<br>
+        <code>table-hover</code>: 可以產生滑鼠hover列的效果。<br>
+        <code>table-bordered</code>: 恢復完整邊框樣式。<br>
+        <code>table-condensed</code>: 縮緊表格，可以取消表格內部的padding。<br>
+        <code>table-responsive</code>: 響應式表格，當螢幕寬度小於768px時，會出現水平捲軸。
+      </p>
+      <div  class="table-responsive" > 
+        <table class="table table-hover">
+          <tr class = "active" >
+            <td>1</td>
+            <td>Column content</td>
+            <td>active樣式，表示點選</td>
+          </tr> 
+          <tr>
+            <td>none</td>
+            <td>none</td>
+            <td>none</td>
+          </tr> 
+          <tr class = "success" >
+            <td>2</td>
+            <td>Column content</td>
+            <td>success樣式，表示成功</td>
+          </tr> 
+          <tr>
+            <td>none</td>
+            <td>none</td>
+            <td>none</td>
+          </tr> 
+          <tr>
+            <td>none</td>
+            <td>none</td>
+            <td>none</td>
+          </tr> 
+          <tr class = "warning" >
+            <td>3</td>
+            <td>Column content</td>
+            <td>warning樣式，表示警告</td>
+          </tr> 
+          <tr>
+            <td>none</td>
+            <td>none</td>
+            <td>none</td>
+          </tr> 
+          <tr class = "danger" >
+            <td>4</td>
+            <td>Column content</td>
+            <td>danger樣式，表示危險</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <h1>表單</h1>
+    <div class="container">
+
+
+      <h2>表單元件屬性</h2>
+      <p>
+        支持HTML5所有的屬性類別，例如:<code>text</code>、<code>password</code>、<code>datetime</code>、<code>datetime-local</code>、<code>date</code>、<code>month</code>、<code>time</code>、<code>week</code>、<code>number</code>、<code>email</code>、<code>url</code>、<code>search</code>、<code>tel</code>和<code>color</code>。
+      </p>
+
+      <h2>Label</h2>
+      <div class="container">
+        <code>sr-only</code>: 可以隱藏元件。<br>
+        建議ㄧ定要加label標籤，如果不想顯示，可以用sr-only隱藏label。<br>
+        label 的 <code>for</code>屬性功能，可以跟據id綁定表單元素。
+      </div>
+      <pre class="prettyprint">
+
+          &lt;label for=&#39;target&#39;&gt;Label&lt;/label&gt;
+          &lt;input type=&quot;text&quot; id=&quot;target&quot; class=&quot;form-control&quot;/&gt;
+      </pre>
+
+      <h2>表單基本設定</h2>
+      <div class="container">
+        <p>
+          <code>form-group</code>:在此標籤中設定表單樣式，效果較佳。<br>
+          <code>form-control</code>:將表單標籤套用樣式。<small>預設寬度為100%。</small><br>
+          <code>btn btn-default</code>:按鈕樣式。<br>
+        </p>
+        <form>
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
+          </div>
+          <input type="submit" class="btn btn-default">
+        </form>
+      </div>
+
+      <h2>表單排列設定</h2>
+      <h3>併排排列</h3>
+      <div class="container">
+        <p>
+          在form標籤設置<code>form-inline</code>:可使其內容左對齊並且表現為inline-block級別的控件。<br>
+        </p>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <label class = "sr-only" for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
+          </div>
+          <div class="form-group">
+            <label class = "sr-only" for="inputPhone">Phone</label>
+            <input type="text" class="form-control" id="inputPhone" placeholder="Enter Your Phone">
+          </div>
+          <input type="submit" class="btn btn-default">
+        </form>
+      </div>
+
+      <h3>水平排列</h3>
+      <div class="container">
+        <p>
+          在form標籤設置<code>form-horizontal</code>:可使其內容水平排列。<br>
+          <small>
+            <code>form-group</code>具有row功能，因此可以直接使用<code>col-sm</code>或<code>col-sm-offset</code>控制label<br>
+            <code>control-label</code>使label靠右<br>
+            <code>col-sm</code>或<code>col-sm-offset</code>控制input<br>
+          </small>
+        </p>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputNames">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputNames" placeholder="Enter Your Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputPhones">Phone</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPhones" placeholder="Enter Your Phone">
+            </div>
+          </div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" class="btn btn-default">
+          </div>
+        </form>
+      </div>
+
+      <h2>Checkbox 核選方塊</h2>
+      <p>
+        <code>checkbox-inline</code>或 <code>radio-inline</code>可以使checkbox水平排列。
+      </p>
+      <div class="container">
+        <form role="form">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" /> Agress
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+          </div>
+        </form>
+
+        <small>水平排列</small>
+        <form role="form">
+          <div class="checkbox-inline">
+            <label>
+              <input type="checkbox" /> Agress
+            </label>
+          </div>
+          <div class="checkbox-inline">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+          </div>
+        </form>
+
+        <pre class="prettyprint">
+
+          &lt;form role=&quot;form&quot;&gt;
+            &lt;div class=&quot;checkbox&quot; &gt;
+              &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot; /&gt; Remember me
+              &lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+          &lt;small&gt;水平排列&lt;/small&gt;
+          &lt;form role=&quot;form&quot;&gt;
+            &lt;div class=&quot;checkbox-inline&quot;&gt;
+              &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot; /&gt; Agress
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;checkbox-inline&quot;&gt;
+              &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot; /&gt; Remember me
+              &lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+          &lt;form role=&quot;form&quot;&gt;
+           
+        </pre>
+      </div>
+
+
+
+      <h2>Radio 多選項按鈕</h2>
+      <div class="container">
+        <form role="form">
+          <div class="radio">
+            <label>
+              <input type="radio" id="name1" name="inputRadio" value="1" checked/> Name1
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" id="name2" name="inputRadio" value="2" /> Name2
+            </label>
+          </div>
+        </form>
+        <pre class="prettyprint">
+        
+          &lt;form role=&quot;form&quot;&gt;
+            &lt;div class=&quot;radio&quot;&gt;
+              &lt;label&gt;
+                &lt;input type=&quot;radio&quot; id=&quot;name1&quot; name=&quot;inputRadio&quot; value=&quot;1&quot; checked/&gt; Name1
+              &lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;radio&quot;&gt;
+              &lt;label&gt;
+                &lt;input type=&quot;radio&quot; id=&quot;name2&quot; name=&quot;inputRadio&quot; value=&quot;2&quot; /&gt; Name2
+              &lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        </pre>
+      </div>
+
+      <h2>Textarea</h2>
+      <div class="container">
+        <p>
+          多行文字框可以藉由<code>rows</code>調整高度<br>
+        </p>
+        <form role="form">
+          <textarea rows='3' class="form-control"></textarea>
+        </form>
+        <pre class="prettyprint">
+
+          &lt;form role=&quot;form&quot;&gt;
+            &lt;textarea rows=&#39;3&#39; class=&quot;form-control&quot;&gt;&lt;/textarea&gt;
+          &lt;/form&gt;
+        </pre>
+      </div>
+
+      <h2>Select</h2>
+      <div class="container">
+        <p>
+          <code>multiple</code>可以將下拉選單設定為多選<br>
+        </p>
+        <form role="form">
+          <select class="form-control">
+            <option>項目1</option>
+            <option>項目2</option>
+            <option>項目3</option>
+            <option>項目4</option>
+          </select>
+          
+          <select class="form-control" multiple>
+            <option>項目1</option>
+            <option>項目2</option>
+            <option>項目3</option>
+            <option>項目4</option>
+          </select>
+        </form>
+        <pre class="prettyprint">
+
+          &lt;select class=&quot;form-control&quot;&gt;
+            &lt;option&gt;項目1&lt;/option&gt;
+            &lt;option&gt;項目2&lt;/option&gt;
+            &lt;option&gt;項目3&lt;/option&gt;
+            &lt;option&gt;項目4&lt;/option&gt;
+          &lt;/select&gt;
+          
+          &lt;select class=&quot;form-control&quot; multiple&gt;
+            &lt;option&gt;項目1&lt;/option&gt;
+            &lt;option&gt;項目2&lt;/option&gt;
+            &lt;option&gt;項目3&lt;/option&gt;
+            &lt;option&gt;項目4&lt;/option&gt;
+          &lt;/select&gt;
+        </pre>
+      </div>
+
+      <h2>表單中的靜態文字</h2>
+      <div class="container">
+        <p>
+          &lt;p&gt;元素添加<code>form-control-static</code>
+        </p>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <p class = "form-control-static">
+                example@example.com
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="pw">Password</label>
+            <div class="col-sm-10">
+              <input type="password" id="pw" class="form-control">
+            </div>
+          </div>
+        </form>
+        <pre class="prettyprint">
+
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-2 control-label&quot;&gt;Email&lt;/label&gt;
+            &lt;div class=&quot;col-sm-10&quot;&gt;
+              &lt;p class = &quot;form-control-static&quot;&gt;
+                example@example.com
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        </pre>
+      </div>
+
+      <h2>禁止輸入</h2>
+      <div class="container">
+        <p>
+          <code>disabled</code>加入表單標籤，可禁止輸入<br>
+        </p>
+        <form role="form">
+          <input type="text" class="form-control" placeholder="禁止輸入" disabled>
+        </form>
+        <pre class="prettyprint">
+
+          &lt;input type=&quot;text&quot; class=&quot;font-control&quot; placeholder=&quot;禁止輸入&quot; disable&gt;
+        </pre>
+      </div>
+
+      <h2>驗證樣式</h2>
+      <div class="container">
+        <p>
+          驗證表單時，可以表單元件的父元素加入提示:<br>
+          <code>has-success</code> 成功<br>
+          <code>has-warning</code> 警告<br>
+          <code>has-error</code> 錯誤<br>
+        </p>
+        <form role="form">
+          <div class="form-group has-success">
+            <label for="inputNames1" class="control-label">Name</label>
+            <input type="text" class="form-control" id="inputNames1"/>
+          </div>
+          <div class="form-group has-warning">
+            <label for="inputNames2" class="control-label">Name2</label>
+            <input type="text" class="form-control" id="inputNames2"/>
+          </div>
+          <div class="form-group has-error">
+            <label for="inputNames3" class="control-label">Name3</label>
+            <input type="text" class="form-control" id="inputNames3"/>
+          </div>
+        </form>
+        <pre class="prettyprint">
+
+          &lt;form role=&quot;form&quot;&gt;
+            &lt;textarea rows=&#39;3&#39; class=&quot;form-control&quot;&gt;&lt;/textarea&gt;
+          &lt;/form&gt;
+        </pre>
+      </div>
+
+      <h2>控制表單元件高度</h2>
+      <div class="container">
+        <p>
+          用<code>input-sm</code>, <code>input-lg</code>可以控制表單元件高度
+        </p>
+        <form role="form">
+          <div class="form-group">
+            <label for="inputText1" class="control-label">高</label>
+            <input type="text" class="form-control input-lg" id="inputText1" placeholder="input-lg"/>
+          </div>
+          <div class="form-group">
+            <label for="inputText2" class="control-label">正常</label>
+            <input type="text" class="form-control " id="inputText2"/>
+          </div>
+          <div class="form-group">
+            <label for="inputText3" class="control-label">矮</label>
+            <input type="text" class="form-control input-sm" id="inputText3" placeholder="input-sm"/>
+          </div>
+          <pre class="prettyprint">
+
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;inputText1&quot; class=&quot;control-label&quot;&gt;高&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control input-lg&quot; id=&quot;inputText1&quot; placeholder=&quot;input-lg&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;inputText2&quot; class=&quot;control-label&quot;&gt;正常&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control &quot; id=&quot;inputText2&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;inputText3&quot; class=&quot;control-label&quot;&gt;矮&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; id=&quot;inputText3&quot; placeholder=&quot;input-sm&quot;/&gt;
+            &lt;/div&gt;
+          </pre>
+        </form>
+      </div>
+
+      <h3>輔助說明: 佔住一行</h3>
+      <div class="container">
+        <p>
+          <code>help-block</code>套用在span中，可以佔住一行，作為輔助說明文字框<br>
+        </p>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputNamess">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputNamess" placeholder="Enter Your Name">
+              <span class="help-block" >佔住一行，作為輔助說明文字框。</span >
+            </div>
+          </div>
+        </form>
+        <pre class="prettyprint">
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label class=&quot;col-sm-2 control-label&quot; for=&quot;inputNamess&quot;&gt;Name&lt;/label&gt;
+              &lt;div class=&quot;col-sm-10&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;inputNamess&quot; placeholder=&quot;Enter Your Name&quot;&gt;
+                &lt;span class=&quot;help-block&quot; &gt;佔住一行，作為輔助說明文字框。&lt;/span &gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+      </div>
+
+      <h1>按鈕</h1>
+
+      <h2>ㄧ般設定</h2>
+      <div class="container">
+        <p>
+          可以為<code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>或<code>&lt;input&gt;</code>標籤添加按鈕樣式。<br>
+          為了符合跨瀏覽器，建議使用<code>&lt;bottom&gt;</code>元素，確保一致性。<br>
+          快速設定按鈕樣式:<br>
+          <code>btn-default</code>預設<br>
+          <code>btn-primary</code>藍色<br>
+          <code>btn-success</code>綠色<br>
+          <code>btn-info</code>藍色<br>
+          <code>btn-warning</code>橘色<br>
+          <code>btn-danger</code>紅色<br>
+          <code>btn-link</code>一般超連結
+        </p>
+        <div class="container">
+          <button type="button" class="btn btn-default">Default</button>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-link">Link</button>
+          <pre class="prettyprint">
+
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;
+          </pre>
+        </div><br>
+      </div>
+
+      <h2>尺寸</h2>
+      <div class="container">
+        <p>
+          <code>btn-lg</code>、<code>btn-sm</code>、<code>btn-xs</code>可以設定成不同尺寸
+        </p>
+        <div class="container">
+          <form role="form">
+            <bottom type="bottom" class="btn btn-primary btn-lg">btn-lg</bottom>&nbsp; &nbsp;
+            <bottom type="bottom" class="btn btn-primary btn-sm">btn-sm</bottom>&nbsp; &nbsp;
+            <bottom type="bottom" class="btn btn-primary btn-xs">btn-xs</bottom>&nbsp; &nbsp;
+          </form>
+          <pre class="prettyprint">
+
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;btn-lg&lt;/bottom&gt;
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;btn-sm&lt;/bottom&gt;
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary btn-xs&quot;&gt;btn-xs&lt;/bottom&gt;
+          </pre>
+        </div>
+
+        <p>
+          <code>btn-block</code>可以使按鈕寬度100%。
+        </p>
+        <div class="container">
+          <bottom type="bottom" class="btn btn-primary btn-block">btn-block</bottom>
+          <pre class="prettyprint">
+
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary btn-block&quot;&gt;btn-block&lt;/bottom&gt;
+          </pre>
+        </div>
+        <p>
+          <code>active</code>可以使按鈕呈現點擊的狀態。
+        </p>
+        <div class="container">
+          <bottom type="bottom" class="btn btn-primary active">active</bottom>&nbsp;
+          <bottom type="bottom" class="btn btn-default active">active</bottom>
+          <pre class="prettyprint">
+
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary active&quot;&gt;active&lt;/bottom&gt;
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-default active&quot;&gt;active&lt;/bottom&gt;
+          </pre>
+        </div>
+        <p>
+          <code>disabled</code>可以禁用按鈕。
+        </p>
+        <div class="container">
+          <bottom type="bottom" class="btn btn-primary disabled">disabled</bottom>&nbsp;
+          <bottom type="bottom" class="btn btn-default disabled">disabled</bottom>
+          <pre class="prettyprint">
+
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-primary disabled&quot;&gt;disabled&lt;/bottom&gt;
+            &lt;bottom type=&quot;bottom&quot; class=&quot;btn btn-default disabled&quot;&gt;disabled&lt;/bottom&gt;
+          </pre>
+        </div>
+      </div>
+
+      
+  </div></body>
+</html><style>
+
+
